@@ -80,7 +80,7 @@ void print(double wh[HIDDENNO][POOLOUTSIZE * POOLOUTSIZE * FILTERNO + 1], double
 //*************************************************************************************
 //Main Func
 
-int main() {
+int main(int argc, char *argv) {
     double filter[FILTERNO][FILTERSIZE][FILTERSIZE];                        //Filter
     double e[MAXINPUTNO][INPUTSIZE][INPUTSIZE];                             //Input data
     int t[MAXINPUTNO];                                                      //Supervisor data
