@@ -95,7 +95,7 @@ def run_benchmark():
     with tf.Graph().as_default():
         image_size = 224
         images = tf.Variable(tf.random_normal([batch_size, image_size, image_size, 3], dtype = tf.float32, stddev = 1e-1))
-        pool 5, parameters = inference(images)
+        pool5, parameters = inference(images)
 
         init = tf.global_variables_initializer()
         sess = tf.Session()
