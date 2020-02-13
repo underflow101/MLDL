@@ -156,9 +156,13 @@ sn.fit_generator(
         #callbacks=[checkpoint])
 )
 
+print("Training Ended")
+
 sn.save_weights('weights.h5')
+print("Saved weight file")
 
 sn.save('catsAndDogs.h5')
+print("saved model file")
 
 # End of Code
 ##########################################################################
