@@ -128,23 +128,24 @@ validation_generator = test_datagen.flow_from_directory(
         class_mode='categorical')
 
 # Instantiate AccLossPlotter to visualise training
-early_stopping = EarlyStopping(monitor='val_loss', patience=3, verbose=0)
-checkpoint = ModelCheckpoint(                                         
-                'weights.{epoch:02d}-{val_loss:.2f}.h5',
-                monitor='val_loss',                               
-                verbose=0,                                        
-                save_best_only=True,                              
-                save_weights_only=True,                           
-                mode='min',                                       
-                period=1)                                         
+#early_stopping = EarlyStopping(monitor='val_loss', patience=3, verbose=0)
+#checkpoint = ModelCheckpoint(                                         
+#                'weights.{epoch:02d}-{val_loss:.2f}.h5',
+#                monitor='val_loss',                               
+#                verbose=0,                                        
+#                save_best_only=True,                              
+#                save_weights_only=True,                           
+#                mode='min',                                       
+#                period=1)                                
 
 sn.fit_generator(
         train_generator,
         samples_per_epoch=nb_train_samples,
         nb_epoch=nb_epoch,
         validation_data=validation_generator,
-        nb_val_samples=nb_validation_samples, 
-        callbacks=[checkpoint])
+        nb_val_samples=nb_validation_samples#, 
+        #callbacks=[checkpoint])
+)
 
 sn.save_weights('weights.h5')
 
