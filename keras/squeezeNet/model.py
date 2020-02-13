@@ -22,7 +22,7 @@ from keras.layers import Flatten, Input, GlobalAveragePooling2D, MaxPooling2D
 def SqueezeNet(input_shape, nb_classes, dropout_rate=None, compression=1.0):
     input_img = Input(shape=input_shape)
 
-    x = Conv2D(int(64*compression), (3, 3), activation='relu', strides=(2, 2), padding='same', name='conv1')(input_img)
+    x = Conv2D(int(64 * compression), (3, 3), activation='relu', strides=(2, 2), padding='same', name='conv1')(input_img)
     x = MaxPooling2D(pool_size=(3, 3), strides=(2, 2), name='maxpool1')(x)
     
     x = fire_module(x, int(16 * compression), name='fire2')
