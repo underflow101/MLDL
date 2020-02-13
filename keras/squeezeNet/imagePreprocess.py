@@ -11,9 +11,11 @@ from keras import layers, models, optimizers
 from keras.preprocessing import image
 from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import EarlyStopping, ModelCheckpoint
-from model import SqueezeNet_11
+from model import SqueezeNet
 
+###############################################################################
 # Diretory Path Creation
+# Can separate this code to different python file and just import to this
 original_dataset_dir = '/home/bearpaek/data/datasets/catsAndDogs/train'
 base_dir = '/home/bearpaek/data/datasets/catsAndDogsSmall'
 
@@ -91,8 +93,11 @@ print("검증용 고양이 이미지 전체 개수: ", len(os.listdir(validation
 print("검증용 강아지 이미지 전체 개수: ", len(os.listdir(validation_dogs_dir)))
 print("테스트용 고양이 이미지 전체 개수: ", len(os.listdir(test_cats_dir)))
 print("테스트용 강아지 이미지 전체 개수: ", len(os.listdir(test_dogs_dir)))
+########################################################################################
 
-sn = SqueezeNet_11(input_shape = (224, 224, 3), nb_classes=2)
+########################################################################################
+# Start learning, as well as compiling model
+sn = SqueezeNet(input_shape = (224, 224, 3), nb_classes=2)
 sn.summary()
 train_data_dir = '/home/bearpaek/data/datasets/catsAndDogsSmall/train'
 validation_data_dir = '/home/bearpaek/data/datasets/catsAndDogsSmall/validation'
@@ -126,8 +131,9 @@ validation_generator = test_datagen.flow_from_directory(
         target_size=(width, height),
         batch_size=32,
         class_mode='categorical')
-
-# Instantiate AccLossPlotter to visualise training
+############################################################################
+# Inlcude this Callback checkpoint if you want to make .h5 checkpoint files
+# May slow your training
 #early_stopping = EarlyStopping(monitor='val_loss', patience=3, verbose=0)
 #checkpoint = ModelCheckpoint(                                         
 #                'weights.{epoch:02d}-{val_loss:.2f}.h5',
@@ -137,7 +143,7 @@ validation_generator = test_datagen.flow_from_directory(
 #                save_weights_only=True,                           
 #                mode='min',                                       
 #                period=1)                                
-
+###########################################################################
 sn.fit_generator(
         train_generator,
         samples_per_epoch=nb_train_samples,
@@ -150,3 +156,6 @@ sn.fit_generator(
 sn.save_weights('weights.h5')
 
 sn.save('catsAndDogs.h5')
+
+# End of Code
+##########################################################################
