@@ -12,6 +12,9 @@ from keras.preprocessing import image
 from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import EarlyStopping, ModelCheckpoint
 from model import SqueezeNet
+import matplotlib
+
+matplotlib.use('TkAgg')
 
 ###############################################################################
 # Diretory Path Creation
