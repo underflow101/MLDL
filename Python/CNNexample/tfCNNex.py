@@ -1,5 +1,6 @@
 # Anaconda Python Tensorflow CNN example
 # CNN using AlexNet
+# CNN without GPU
 
 from datetime import datetime
 import math, time
