@@ -1,4 +1,5 @@
-# SqueezeNet Model Source Code
+# SqueezeNet V1.1 Model Source Code
+# Run this code with $ python imagePreprocess.py on console
 # Dev. Dongwon Paek
 
 # Image Preprocessing
@@ -12,9 +13,6 @@ from keras.preprocessing import image
 from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import EarlyStopping, ModelCheckpoint
 from model import SqueezeNet
-import matplotlib
-
-matplotlib.use('TkAgg')
 
 ###############################################################################
 # Diretory Path Creation
