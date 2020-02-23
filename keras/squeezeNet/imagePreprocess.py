@@ -12,9 +12,6 @@ from keras.preprocessing import image
 from keras.preprocessing.image import ImageDataGenerator
 from keras.callbacks import EarlyStopping, ModelCheckpoint
 from model import SqueezeNet
-import matplotlib
-
-matplotlib.use('TkAgg')
 
 ###############################################################################
 # Diretory Path Creation
@@ -106,7 +103,7 @@ train_data_dir = '/home/bearpaek/data/datasets/catsAndDogsSmall/train'
 validation_data_dir = '/home/bearpaek/data/datasets/catsAndDogsSmall/validation'
 nb_train_samples = 2000
 nb_validation_samples = 1000
-nb_epoch = 500
+nb_epoch = 3000
 nb_class = 2
 width, height = 224, 224
 
