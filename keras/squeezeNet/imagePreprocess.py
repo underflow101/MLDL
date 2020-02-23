@@ -1,4 +1,5 @@
-# SqueezeNet Model Source Code
+# SqueezeNet V1.1 Model Source Code
+# Run this code with $ python imagePreprocess.py on console
 # Dev. Dongwon Paek
 
 # Image Preprocessing
