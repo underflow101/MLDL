@@ -41,10 +41,10 @@ validation_cats_dir = os.path.join(validation_dir, 'cats')
 total_dir.append(validation_cats_dir)
 validation_dogs_dir = os.path.join(validation_dir, 'dogs')
 total_dir.append(validation_dogs_dir)
-test_cats_dir = os.path.join(test_dir, 'cats')
-total_dir.append(test_cats_dir)
-test_dogs_dir = os.path.join(test_dir, 'dogs')
-total_dir.append(test_dogs_dir)
+#test_cats_dir = os.path.join(test_dir, 'cats')
+#total_dir.append(test_cats_dir)
+#test_dogs_dir = os.path.join(test_dir, 'dogs')
+#total_dir.append(test_dogs_dir)
 
 try:
     for item in total_dir:
@@ -52,48 +52,48 @@ try:
 except:
     print("괜찮아요우")
 
-fnames = ['cat.{}.jpg'.format(i) for i in range(1000)]
+fnames = ['cat.{}.jpg'.format(i) for i in range(10000)]
 for fname in fnames:
     src = os.path.join(original_dataset_dir, fname)
     dst = os.path.join(train_cats_dir, fname)
     shutil.copyfile(src, dst)
 
-fnames = ['cat.{}.jpg'.format(i) for i in range(1000, 1500)]
+fnames = ['cat.{}.jpg'.format(i) for i in range(10000, 12500)]
 for fname in fnames:
     src = os.path.join(original_dataset_dir, fname)
     dst = os.path.join(validation_cats_dir, fname)
     shutil.copyfile(src, dst)
     
-fnames = ['cat.{}.jpg'.format(i) for i in range(1500, 2000)]
-for fname in fnames:
-    src = os.path.join(original_dataset_dir, fname)
-    dst = os.path.join(test_cats_dir, fname)
-    shutil.copyfile(src, dst)
+#fnames = ['cat.{}.jpg'.format(i) for i in range(1500, 2000)]
+#for fname in fnames:
+#    src = os.path.join(original_dataset_dir, fname)
+#    dst = os.path.join(test_cats_dir, fname)
+#    shutil.copyfile(src, dst)
 
-fnames = ['dog.{}.jpg'.format(i) for i in range(1000)]
+fnames = ['dog.{}.jpg'.format(i) for i in range(10000)]
 for fname in fnames:
     src = os.path.join(original_dataset_dir, fname)
     dst = os.path.join(train_dogs_dir, fname)
     shutil.copyfile(src, dst)
 
-fnames = ['dog.{}.jpg'.format(i) for i in range(1000, 1500)]
+fnames = ['dog.{}.jpg'.format(i) for i in range(10000, 12500)]
 for fname in fnames:
     src = os.path.join(original_dataset_dir, fname)
     dst = os.path.join(validation_dogs_dir, fname)
     shutil.copyfile(src, dst)
 
-fnames = ['dog.{}.jpg'.format(i) for i in range(1500, 2000)]
-for fname in fnames:
-    src = os.path.join(original_dataset_dir, fname)
-    dst = os.path.join(test_dogs_dir, fname)
-    shutil.copyfile(src, dst)
+#fnames = ['dog.{}.jpg'.format(i) for i in range(1500, 2000)]
+#for fname in fnames:
+#    src = os.path.join(original_dataset_dir, fname)
+#    dst = os.path.join(test_dogs_dir, fname)
+#    shutil.copyfile(src, dst)
 
 print("훈련용 고양이 이미지 전체 개수: ", len(os.listdir(train_cats_dir)))
 print("훈련용 강아지 이미지 전체 개수: ", len(os.listdir(train_dogs_dir)))
 print("검증용 고양이 이미지 전체 개수: ", len(os.listdir(validation_cats_dir)))
 print("검증용 강아지 이미지 전체 개수: ", len(os.listdir(validation_dogs_dir)))
-print("테스트용 고양이 이미지 전체 개수: ", len(os.listdir(test_cats_dir)))
-print("테스트용 강아지 이미지 전체 개수: ", len(os.listdir(test_dogs_dir)))
+#print("테스트용 고양이 이미지 전체 개수: ", len(os.listdir(test_cats_dir)))
+#print("테스트용 강아지 이미지 전체 개수: ", len(os.listdir(test_dogs_dir)))
 ########################################################################################
 
 ########################################################################################
