@@ -98,15 +98,15 @@ print("검증용 강아지 이미지 전체 개수: ", len(os.listdir(validation
 
 ########################################################################################
 # Start learning, as well as compiling model
-sn = SqueezeNet(input_shape = (224, 224, 3), nb_classes=2)
+sn = SqueezeNet(input_shape = (150, 150, 3), nb_classes=2)
 sn.summary()
 train_data_dir = '/home/bearpaek/data/datasets/catsAndDogsSmall/train'
 validation_data_dir = '/home/bearpaek/data/datasets/catsAndDogsSmall/validation'
-nb_train_samples = 2000
-nb_validation_samples = 1000
-nb_epoch = 3000
+nb_train_samples = 20000
+nb_validation_samples = 5000
+nb_epoch = 2000
 nb_class = 2
-width, height = 224, 224
+width, height = 150, 150
 
 sgd = SGD(lr=0.001, decay=0.0002, momentum=0.9, nesterov=True)
 sn.compile(optimizer=sgd, loss='categorical_crossentropy', metrics=['accuracy'])
