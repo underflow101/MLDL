@@ -65,52 +65,52 @@ except:
     print("괜찮아요우")
 
 # Others Training & Validation
-fnames = ['{}.jpg'.format(i) for i in range(1, 18001)]
+fnames = ['{}.jpg'.format(i) for i in range(18000)]
 for fname in fnames:
     src = os.path.join(origin_others_dir, fname)
     dst = os.path.join(train_others_dir, fname)
     shutil.copyfile(src, dst)
 
-fnames = ['{}.jpg'.format(i) for i in range(18001, 20001)]
+fnames = ['{}.jpg'.format(i) for i in range(18000, 20000)]
 for fname in fnames:
     src = os.path.join(origin_others_dir, fname)
     dst = os.path.join(validation_others_dir, fname)
     shutil.copyfile(src, dst)
 
 # Writing Training & Validation
-fnames = ['{}.jpg'.format(i) for i in range(1, 18001)]
+fnames = ['{}.jpg'.format(i) for i in range(18000)]
 for fname in fnames:
     src = os.path.join(origin_writing_dir, fname)
     dst = os.path.join(train_writing_dir, fname)
     shutil.copyfile(src, dst)
 
-fnames = ['{}.jpg'.format(i) for i in range(18001, 20001)]
+fnames = ['{}.jpg'.format(i) for i in range(18000, 20000)]
 for fname in fnames:
     src = os.path.join(origin_writing_dir, fname)
     dst = os.path.join(validation_writing_dir, fname)
     shutil.copyfile(src, dst)
 
 # phoneWithHand Training & Validation
-fnames = ['{}.jpg'.format(i) for i in range(1, 18001)]
+fnames = ['{}.jpg'.format(i) for i in range(18000)]
 for fname in fnames:
     src = os.path.join(origin_phoneWithHand_dir, fname)
     dst = os.path.join(train_phoneWithHand_dir, fname)
     shutil.copyfile(src, dst)
 
-fnames = ['{}.jpg'.format(i) for i in range(18001, 20001)]
+fnames = ['{}.jpg'.format(i) for i in range(18000, 20000)]
 for fname in fnames:
     src = os.path.join(origin_phoneWithHand_dir, fname)
     dst = os.path.join(validation_phoneWithHand_dir, fname)
     shutil.copyfile(src, dst)
 
 # Sleep Training & Validation
-fnames = ['{}.jpg'.format(i) for i in range(1, 18001)]
+fnames = ['{}.jpg'.format(i) for i in range(18000)]
 for fname in fnames:
     src = os.path.join(origin_sleep_dir, fname)
     dst = os.path.join(train_sleep_dir, fname)
     shutil.copyfile(src, dst)
 
-fnames = ['{}.jpg'.format(i) for i in range(18001, 20001)]
+fnames = ['{}.jpg'.format(i) for i in range(18000, 20000)]
 for fname in fnames:
     src = os.path.join(origin_sleep_dir, fname)
     dst = os.path.join(validation_sleep_dir, fname)
