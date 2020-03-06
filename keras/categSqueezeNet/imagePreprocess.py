@@ -17,12 +17,12 @@ from model import SqueezeNet
 ###############################################################################
 # Diretory Path Creation
 # Can separate this code to different python file and just import to this
-original_dataset_dir = '/home/bearpaek/data/datasets/lpl/'
+original_dataset_dir = '/home/bearpaek/data/datasets/lpl224/'
 
-origin_others_dir = '/home/bearpaek/data/datasets/lpl/others'
-origin_writing_dir = '/home/bearpaek/data/datasets/lpl/writing'
-origin_phoneWithHand_dir = '/home/bearpaek/data/datasets/lpl/phoneWithHand'
-origin_sleep_dir = '/home/bearpaek/data/datasets/lpl/sleep'
+origin_others_dir = '/home/bearpaek/data/datasets/lpl224/others'
+origin_writing_dir = '/home/bearpaek/data/datasets/lpl224/writing'
+origin_phoneWithHand_dir = '/home/bearpaek/data/datasets/lpl224/phoneWithHand'
+origin_sleep_dir = '/home/bearpaek/data/datasets/lpl224/sleep'
 
 base_dir = '/home/bearpaek/data/datasets/lplSmall'
 
@@ -133,8 +133,8 @@ sn = SqueezeNet(input_shape = (224, 224, 3), nb_classes=4)
 sn.summary()
 train_data_dir = '/home/bearpaek/data/datasets/lplSmall/train'
 validation_data_dir = '/home/bearpaek/data/datasets/lplSmall/validation'
-nb_train_samples = 20000
-nb_validation_samples = 5000
+nb_train_samples = 72000
+nb_validation_samples = 8000
 nb_epoch = 2000
 nb_class = 4
 width, height = 224, 224
