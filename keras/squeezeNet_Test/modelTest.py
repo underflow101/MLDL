@@ -12,7 +12,7 @@ from keras.models import Sequential
 
 from keras.layers import Dense, Activation
 from keras.models import load_model
-from models import model_from_json
+from keras.models import model_from_json
 from keras.preprocessing import image
 from keras.preprocessing.image import ImageDataGenerator
 import numpy as np
