@@ -23,7 +23,7 @@ base_dir = "./"
 
 total_dir = list()
 
-test_dir = os.path.join(base_dir, 'test')
+test_dir = os.path.join(base_dir, 'testImage')
 total_dir.append(test_dir)
 
 test_others_dir = os.path.join(test_dir, 'others')
