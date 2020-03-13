@@ -169,7 +169,8 @@ validation_generator = test_datagen.flow_from_directory(
 early_stopping = EarlyStopping(monitor='val_acc', patience=5, verbose=0)
 checkpoint = ModelCheckpoint(                                         
                 'weights.{epoch:02d}.h5',
-                verbose=0,                                        
+                monitor='val_acc',
+                verbose=1,                                        
                 save_best_only=True,                              
                 save_weights_only=True,                           
                 mode='max',                                       
