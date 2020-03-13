@@ -2,8 +2,10 @@
 
 import h5py
 import os, shutil
+import pydot
 import matplotlib.pyplot as plt
 from IPython.display import SVG
+import keras.utils
 from keras.utils.vis_utils import model_to_dot
 from keras.optimizers import SGD
 from keras.utils import np_utils
@@ -18,6 +20,10 @@ from keras.preprocessing.image import ImageDataGenerator
 import numpy as np
 from numpy import argmax
 from model import SqueezeNet
+from sklearn.metrics import confusion_matrix
+
+import csv
+import pandas as pd
 
 base_dir = "./"
 
@@ -40,8 +46,13 @@ print("테스트용 필기 이미지 전체 개수: ", len(os.listdir(test_writi
 print("테스트용 핸드폰사용 이미지 전체 개수: ", len(os.listdir(test_phoneWithHand_dir)))
 print("테스트용 엎드려수면 이미지 전체 개수: ", len(os.listdir(test_sleep_dir)))
 
-test_data_dir = './test'
-nb_test_samples = 2000
+test_data_dir = './testImage'
+test_others_data = './testImage/others'
+test_writing_data = './testImage/writing'
+test_phoneWithHand_data = './testImage/phoneWithHand'
+test_sleep_data = './testImage/sleep'
+
+nb_test_samples = 500
 nb_class = 4
 width, height = 224, 224
 
@@ -59,12 +70,22 @@ test_datagen = ImageDataGenerator(rescale=1./255)
 test_generator = test_datagen.flow_from_directory(
         test_data_dir,
         target_size=(width, height),
-        batch_size=32,
+        batch_size=20,
+        shuffle=False,
         class_mode='categorical')
+test_generator.reset()
+res = model.predict_generator(test_generator, steps=100, verbose=True)  # 224 images
 
-res = model.predict_generator(test_generator, steps=5)
+classes = test_generator.classes[test_generator.index_array]
+y_pred = np.argmax(res, axis=-1)  # Returns maximum indices in each row
 
 print("-- Predict --")
 np.set_printoptions(formatter={'float': lambda x: "{0:0.3f}".format(x)})
 print(test_generator.class_indices)
 print(res)
+
+keras.utils.plot_model(model, to_file='model.png', show_shapes=True, show_layer_names=True, rankdir='TB', expand_nested=False, dpi=300)
+
+y_true = test_generator.classes
+confmat = confusion_matrix(y_true, y_pred)
+print(confmat)
