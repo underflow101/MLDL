@@ -74,7 +74,7 @@ test_generator = test_datagen.flow_from_directory(
         shuffle=False,
         class_mode='categorical')
 test_generator.reset()
-res = model.predict_generator(test_generator, steps=100, verbose=True)  # 224 images
+res = model.predict_generator(test_generator, steps=100, verbose=True)  # 2000 images
 
 classes = test_generator.classes[test_generator.index_array]
 y_pred = np.argmax(res, axis=-1)  # Returns maximum indices in each row
@@ -89,3 +89,22 @@ keras.utils.plot_model(model, to_file='model.png', show_shapes=True, show_layer_
 y_true = test_generator.classes
 confmat = confusion_matrix(y_true, y_pred)
 print(confmat)
+
+#################################################################
+
+csvFile = open('predictionResult.csv', 'w')
+writer = csv.writer(csvFile, lineterminator='\n')
+writer.writerow(['0. others', '1. phoneWithHand', '2. sleep', '3. writing'])
+
+for i in range(2000):
+        writer.writerow(res[i])
+
+csvFile.close()
+
+csvFile2 = open('confusionMatrix.csv', 'w')
+writer = csv.writer(csvFile2, lineterminator='\n')
+writer.writerow(['0. others', '1. phoneWithHand', '2. sleep', '3. writing'])
+
+for i in range(4):
+        writer.writerow(confmat[i])
+csvFile2.close()
