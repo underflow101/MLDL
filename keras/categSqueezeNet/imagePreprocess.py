@@ -166,14 +166,14 @@ validation_generator = test_datagen.flow_from_directory(
 ############################################################################
 # Inlcude this Callback checkpoint if you want to make .h5 checkpoint files
 # May slow your training
-early_stopping = EarlyStopping(monitor='val_acc', patience=5, verbose=0)
+early_stopping = EarlyStopping(monitor='val_loss', patience=5, verbose=0)
 checkpoint = ModelCheckpoint(                                         
                 'weights.{epoch:02d}.h5',
-                monitor='val_acc',
+                monitor='val_loss',
                 verbose=1,                                        
                 save_best_only=True,                              
                 save_weights_only=True,                           
-                mode='max',                                       
+                mode='min',                                       
                 period=1)                                
 ###########################################################################
 sn.fit_generator(
