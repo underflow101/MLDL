@@ -171,9 +171,9 @@ checkpoint = ModelCheckpoint(
                 'weights.{epoch:02d}.h5',
                 monitor='val_loss',
                 verbose=1,                                        
-                save_best_only=True,                              
+                save_best_only=False,                              
                 save_weights_only=True,                           
-                mode='min',                                       
+                #mode='min',                                       
                 period=1)                                
 ###########################################################################
 sn.fit_generator(
