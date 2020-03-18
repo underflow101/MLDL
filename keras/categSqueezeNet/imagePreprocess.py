@@ -1,8 +1,10 @@
+##################################################################
 # SqueezeNet V1.1 Model Source Code
 # Run this code with $ python imagePreprocess.py on console
 # Dev. Dongwon Paek
 
 # Image Preprocessing
+##################################################################
 
 import h5py
 import os, shutil
