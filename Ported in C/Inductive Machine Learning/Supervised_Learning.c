@@ -1,20 +1,20 @@
-//Developer: Dongwon Paek
-//Project: Machine Learning in C Language - Supervised Learning
-//Subtitle: Inductive Machine Learning - Learning Stock
-//Since 2017.07.11.
-//Ended 2017.07.27.
+// Developer: Dongwon Paek
+// Project: Machine Learning in C Language - Supervised Learning
+// Subtitle: Inductive Machine Learning - Learning Stock
+// Since 2017.07.11.
+// Ended 2017.07.27.
 //*************************************************************************************
 
 #define _CRT_SECURE_NO_WARNINGS
 
 //*************************************************************************************
-//Headers
+// Headers
 
 #include <stdio.h>
 #include <stdlib.h>
 
 //*************************************************************************************
-//Definitions
+// Definitions
 
 #define SIZE 100            //Data's size
 #define CNumber 10          //Corporation number
@@ -22,14 +22,14 @@
 #define SEED 32767          //Seed for randomization
 
 //*************************************************************************************
-//Func Prototypes
+// Func Prototypes
 
 void readdata(int data[SIZE][CNumber], int teacher[SIZE]);
 int rand012();
 int calcscore(int data[SIZE][CNumber], int teacher[SIZE], int answer[CNumber]);
 
 //*************************************************************************************
-//Main Func
+// Main Func
 
 int main() {
     int i, j, score = 0, bestscore = 0;
@@ -70,7 +70,7 @@ int main() {
 }
 
 //*************************************************************************************
-//Peripheral Func
+// Peripheral Func
 
 int calcscore(int data[SIZE][CNumber], int teacher[SIZE], int answer[CNumber]) {
     int score = 0, point, i, j;
