@@ -1,8 +1,8 @@
-//Developer: Dongwon Paek
-//Project: DEEP Learning in C Language - Convolutional Neural Network
-//Subtitle: Once And For All, CNN in C
-//Since 2017.09.19.
-//Ended 2018.01.08.
+// Developer: Dongwon Paek
+// Project: DEEP Learning in C Language - Convolutional Neural Network
+// Subtitle: Once And For All, CNN in C
+// Since 2017.09.19.
+// Ended 2018.01.08.
 //*************************************************************************************
 
 #define _CRT_SECURE_NO_WARNINGS
