@@ -8,6 +8,7 @@ assets/
 variables/
 *.zip
 *.pb
+*.tflite
 
 # C extensions
 *.so
