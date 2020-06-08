@@ -39,6 +39,9 @@ def main():
     interpreter = tflite.Interpreter(model_path="converted_model.tflite")
     interpreter.allocate_tensors()
     
+    frame_rate_calc = 1
+    freq = getTickFrequency()
+    
     image_path = []
     
     writing = 0
@@ -99,6 +102,11 @@ def main():
                 phoneWithHand += 1
             elif(tmp[0].split(" ")[1] == 'others'):
                 others += 1
+            
+            t2 = getTickCount()
+            time1 = (t2 - t1) / freq
+            frame_rate_calc = 1 / time1
+            print(frame_rate_calc)
                 
         print('others: ', end='')
         print(others)
