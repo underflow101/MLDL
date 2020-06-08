@@ -49,10 +49,10 @@ def main():
     others = 0
     sleep = 0
 
-    image_path[0] = "./others/"
-    image_path[1] = "./phoneWithHand/"
-    image_path[2] = "./sleep/"
-    image_path[3] = "./writing/"
+    image_path.append("./others/")
+    image_path.append("./phoneWithHand/")
+    image_path.append("./sleep/")
+    image_path.append("./writing/")
     
     for j in range(0, 4):
         for i in range(0, 100):
