@@ -3,6 +3,7 @@
 #
 # Dev. Dongwon Paek
 # Description: Real example of converting keras weight file to .tflite file
+#              Some functions are commented out for optional purpose
 #####################################################################################
 
 from __future__ import absolute_import, division, print_function
