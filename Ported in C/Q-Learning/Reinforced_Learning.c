@@ -1,8 +1,8 @@
 // Developer: Dongwon Paek
 // Project: Machine Learning in C Language - Reinforcement Learning
 // Subtitle: Q-Learning - Learning Optimized Way to Escape the Labyrinth (by robot itself)
-// Since 2017.01.21.
-// Ended 2017.03.01.
+// Since 2017.01.21
+// Ended 2017.03.01
 //*************************************************************************************
 
 #define _CRT_SECURE_NO_WARNINGS
