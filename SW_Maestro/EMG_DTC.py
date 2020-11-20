@@ -7,6 +7,8 @@ from sklearn.metrics import confusion_matrix
 from matplotlib import projections
 from math import gamma
 from numpy import float64
+from sklearn.neural_network import MLPClassifier
+from sklearn.tree import DecisionTreeClassifier
 
 X_data = []
 y_data = []
@@ -48,11 +50,8 @@ scaler.fit(X_train, y_train)
 X_train_std = scaler.transform(X_train)
 X_test_std = scaler.transform(X_test)
 
-from sklearn.neural_network import MLPClassifier
 
 clf = MLPClassifier(hidden_layer_sizes = (20,20,20), learning_rate_init = 0.0001, max_iter = 200000, momentum = 0.5)
-
-from sklearn.tree import DecisionTreeClassifier
 
 # clf = DecisionTreeClassifier(criterion = 'gini', max_depth = 25, random_state = 42)
 
